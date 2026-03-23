@@ -82,18 +82,16 @@ PROJECT2---WEATHER-CRI.../
 │   │   ├── Crime_EDA.ipynb
 │   │   ├── Dataset_Project2.ipynb
 │   │   ├── EDA_proj2.ipynb
-│   │   ├── placeholder.txt
+│   │   ├── lstm.ipynb
+│   │   ├── Modeling_proj2.ipynb
+│   │   ├── RNNModel.ipynb
 │   │   ├── temp.ipynb
 │   │   └── weather_data.ipynb
 │   ├── Dataset_Formulation.ipynb      # Step 1: Data collection and merging
-│   └── Exploratory_Data_Analysis.ipynb  # Step 2: EDA, visualizations, correlation analysis
+│   ├── Exploratory_Data_Analysis.ipynb  # Step 2: EDA, visualizations, correlation analysis
+│   └── Modeling.ipynb #Step 3: Linear Regression, SARIMAX, RNN (TensorFlow/Keras), and LSTM (PyTorch) Models 
 │
-├── Dataset_Formulation.ipynb          # Step 1: Data collection and merging
-├── Exploratory_Data_Analysis.ipynb    # Step 2: EDA, visualizations, correlation analysis
-├── lstm.ipynb                         # Step 5: LSTM model (PyTorch)
-├── Modeling_proj2.ipynb               # Step 3: Linear Regression and SARIMAX models
 ├── README.md                          # Project overview and reproduction instructions
-├── RNNModel.ipynb                     # Step 4: Recurrent Neural Network (TensorFlow/Keras)
 └── license.md                         # MIT License
 ```
 
@@ -121,23 +119,13 @@ Follow these steps in order to reproduce the full results of the study.
 2. Run all cells from top to bottom.
 3. This notebook produces descriptive statistics, time series plots, correlation analyses, and cross-correlation functions (CCF) between weather variables and crime counts. Review the output plots to understand the structure of the data before modeling.
 
-### Step 4 — Run the Baseline and SARIMAX Models
+### Step 4 — Run the Modeling
 
-1. Open **`Modeling_proj2.ipynb`**.
+1. Open **`Modeling.ipynb`**.
 2. Run all cells from top to bottom.
-3. This notebook fits a **Linear Regression** baseline and a **SARIMAX** time series model to predict crime counts from weather features. Evaluation metrics (MAE, RMSE, R²) are printed at the end of each model section.
-
-### Step 5 — Run the RNN Model
-
-1. Open **`RNNModel.ipynb`**.
-2. Run all cells from top to bottom.
-3. This notebook trains a **Recurrent Neural Network** using TensorFlow/Keras — first using both weather and crime features, then crime-only. Seeds are set at the top of the notebook (seed = 42) to ensure reproducibility. Final evaluation metrics are displayed after training.
-
-### Step 6 — Run the LSTM Model
-
-1. Open **`lstm.ipynb`**.
-2. Run all cells from top to bottom.
-3. This notebook trains a **Long Short-Term Memory (LSTM)** network using PyTorch. It includes sequence building, an initial LSTM, and an improved LSTM variant. Results (MSE, MAE) are printed after each model.
+3. The first section of this notebook fits a **Linear Regression** baseline and a **SARIMAX** time series model to predict crime counts from weather features. Evaluation metrics (MAE, RMSE, R²) are printed at the end of each model section.
+4. The next section trains a **Recurrent Neural Network** using TensorFlow/Keras — first using both weather and crime features, then crime-only. Seeds are set at the top of the notebook (seed = 42) to ensure reproducibility. Final evaluation metrics are displayed after training.
+5. The last section in this notebook notebook trains a **Long Short-Term Memory (LSTM)** network using PyTorch. It includes sequence building, an initial LSTM, and an improved LSTM variant. Results (MSE, MAE) are printed after each model.
 
 ### Notes on Reproducibility
 - All models use fixed random seeds (42) where applicable. Results should be consistent across runs on the same machine, though minor floating-point differences may occur across different hardware or library versions.
